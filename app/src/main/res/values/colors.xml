@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Created by https://github.com/braver-tool
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 24/01/22, 11:45 AM
+  ~  */
+  -->
+
+<resources>
+    <color name="teal_200">#7307AF</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="app_primary_100">#A623A4</color>
+    <color name="app_primary_200">#610692</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="white_light">#E0E0E0</color>
+</resources>

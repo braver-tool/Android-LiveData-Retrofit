@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Created by https://github.com/braver-tool
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 24/01/22, 11:45 AM
+  ~  */
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/recyclerFragment">
+
+    <fragment
+        android:id="@+id/recyclerFragment"
+        android:name="com.brave.livedata.fragments.RecyclerFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_recycler">
+        <argument
+            android:name="arg_selected_profile"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_profile_to_web"
+            app:destination="@id/webFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.brave.livedata.fragments.WebViewFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_web_view" />
+</navigation>
