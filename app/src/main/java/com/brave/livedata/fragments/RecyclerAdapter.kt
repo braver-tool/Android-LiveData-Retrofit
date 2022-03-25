@@ -49,7 +49,10 @@ class RecyclerAdapter(
         holder.adapterRecyclerDataBinding.leaderQuoteTextView.text =
             quote
         try {
-            val bitmap: Bitmap = ImageUtils.getLeaderProfile(context, position)!!
+            val bitmap: Bitmap = ImageUtils.getLeaderProfile(
+                context,
+                profileDetailItemsList[position].getId()?.minus(1)!!
+            )!!
             Glide.with(context).load(bitmap)
                 .placeholder(R.drawable.default_profile)
                 .into(holder.adapterRecyclerDataBinding.leaderProfileImageView)

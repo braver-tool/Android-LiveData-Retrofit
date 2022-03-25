@@ -27,6 +27,11 @@ class ProfileDetailItems {
     @SerializedName("quote")
     private var quote: String? = ""
 
+    @SerializedName("id")
+    private var id: Int? = 0
+
+    constructor()
+
     fun getName(): String? {
         return name
     }
@@ -66,4 +71,9 @@ class ProfileDetailItems {
     fun setQuote(quote: String?) {
         this.quote = quote
     }
+
+    fun getId(): Int? {
+        return id
+    }
+
 }
