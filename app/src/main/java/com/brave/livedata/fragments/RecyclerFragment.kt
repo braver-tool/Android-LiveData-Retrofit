@@ -2,7 +2,7 @@
  *
  *  * Created by https://github.com/braver-tool
  *  * Copyright (c) 2022 . All rights reserved.
- *  * Last modified 24/01/22, 11:45 AM
+ *  * Last modified 25/03/22, 11:00 AM
  *
  */
 
@@ -65,7 +65,7 @@ class RecyclerFragment : Fragment(), RecyclerAdapter.RecyclerViewClickListener {
         binding.profileRecyclerView.setHasFixedSize(true)
         if (AppUtils.isNetworkAvailable(context)) {
             binding.progressCircular.visibility = View.VISIBLE
-            recyclerViewModel.getProfileModels().observe(viewLifecycleOwner, { profileList ->
+            recyclerViewModel.getProfileModels().observe(viewLifecycleOwner) { profileList ->
                 binding.progressCircular.visibility = View.GONE
                 if (profileList.isNotEmpty()) {
                     profileDetailItemsList.addAll(profileList)
@@ -75,7 +75,7 @@ class RecyclerFragment : Fragment(), RecyclerAdapter.RecyclerViewClickListener {
                     binding.noDataText.text = alertNoData
                     binding.noDataText.visibility = View.VISIBLE
                 }
-            })
+            }
         } else {
             binding.noDataText.text = alertNoInternet
             binding.noDataText.visibility = View.VISIBLE
@@ -100,7 +100,7 @@ class RecyclerFragment : Fragment(), RecyclerAdapter.RecyclerViewClickListener {
                     binding.progressCircular.visibility = View.VISIBLE
                     isLoaded = true
                     recyclerViewModel.getProfileModels()
-                        .observe(viewLifecycleOwner, { profileList ->
+                        .observe(viewLifecycleOwner) { profileList ->
                             binding.progressCircular.visibility = View.GONE
                             binding.profileRecyclerView.stopScroll()
                             if (profileList.isNotEmpty()) {
@@ -114,7 +114,7 @@ class RecyclerFragment : Fragment(), RecyclerAdapter.RecyclerViewClickListener {
                                     //recyclerAdapter!!.notifyDataSetChanged()
                                 }
                             }
-                        })
+                        }
                 }
             }
         })

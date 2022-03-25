@@ -2,7 +2,7 @@
  *
  *  * Created by https://github.com/braver-tool
  *  * Copyright (c) 2022 . All rights reserved.
- *  * Last modified 24/01/22, 11:45 AM
+ *  * Last modified 25/03/22, 11:00 AM
  *
  */
 
@@ -21,7 +21,7 @@ class ProfileRepository {
     private val mutableLiveData: MutableLiveData<List<ProfileDetailItems>> = MutableLiveData()
 
     private fun getApiService(): ApiService {
-        return ApiUtils.getRetrofitBuilder("https://braver-tool.000webhostapp.com/")
+        return ApiUtils.getRetrofitBuilder("https://raw.githubusercontent.com/")
             .create(ApiService::class.java)
     }
 
